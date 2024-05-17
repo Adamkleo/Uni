@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- Definición del tipo de documento y versión HTML -->
+<html lang="es">
+<head>
+    <!-- Definición de la codificación de caracteres y configuración de la vista en dispositivos móviles -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Vinculación con la hoja de estilos CSS -->
+    <link rel="stylesheet" href="style/main.css">
+    <script src="script/image_gallery.js"></script>
+    <!-- Título de la página -->
+    <title>Eventos</title>
+</head>
+<body>
+    <!-- Contenedor principal que usa flexbox -->
+    <div class="flex-container">
+        <!-- Columna pequeña para imágenes -->
+        <div class="small-column">
+            <!-- Contenedor de la galería de imágenes -->
+            <div class="left-flex-container">
+                <!-- Logo del restaurante que redirige a la página principal -->
+                <a href="principal.html"><img src="./images/logo-B.png" alt="Logo del Restaurante"></a>
+                <!-- Imágenes de la galería de eventos -->
+                <div class ="carrusel">
+                    <div class="diapositivas imagen1">
+                    <img class="gallary-image" src="images/img1.jpg" alt="Evento 1">
+                    </div>
+                    <!-- Imagen de la Paella -->
+                    <div class="diapositivas" >
+                    <img class="gallary-image" src="images/img2.jpg" alt="Evento 2">
+                    <!-- Imagen de las Gambas al Ajillo -->
+                    </div>
+                    <div class="diapositivas" >
+                        <img class="gallary-image" src="images/img3.jpg" alt="Evento 3">
+                    </div>
+                    <!-- Imagen de la Tortilla Española -->
+                    <div class="diapositivas" >
+                        <img class="gallary-image" src="images/img4.jpg" alt="Evento 4">
+                    </div>
+                    <!--Flechas izquierda y derecha para navegar por la galería de imágenes-->
+                    <a class="img_anterior" onclick="cambiar_imagen(-1)">&#10094;</a>
+                    <a class="img_siguiente" onclick="cambiar_imagen(1)">&#10095;</a>
+    
+                </div>
+                <!--Círculos para saltar a una imagen específica de la galería de imágenes-->
+                <div circulos>
+                    <span class="circulo" onclick="imagen_actual(1)"></span>
+                    <span class="circulo" onclick="imagen_actual(2)"></span>
+                    <span class="circulo" onclick="imagen_actual(3)"></span>
+                </div>
+                
+            </div>
+        </div>
+        <!-- Columna grande para tarjetas de eventos -->
+        <div class="large-column">
+            <!-- Tarjeta de evento: Fiesta de la Paella -->
+            <div class="card">
+                <!-- Título y subtítulo del evento -->
+                <h1 class="card-title">Fiesta de la Paella</h1>
+                <h2 class="card-subtitle">Restaurante Mondariz, Madrid</h2>
+                <!-- Descripción del evento -->
+                <p class="card-description">Únete a nosotros para una noche especial dedicada a la paella...</p>
+            </div>
+            <!-- Tarjeta de evento: Noche de Flamenco -->
+            <div class="card">
+                <h1 class="card-title">Noche de Flamenco</h1>
+                <h2 class="card-subtitle">Restaurante Mondariz, Sevilla</h2>
+                <p class="card-description">Vive una noche apasionante con música y baile flamenco en vivo...</p>
+            </div>
+            <!-- Tarjeta de evento: Maridaje de Vinos -->
+            <div class="card">
+                <h1 class="card-title">Maridaje de Vinos</h1>
+                <h2 class="card-subtitle">Restaurante Mondariz, Barcelona</h2>
+                <p class="card-description">Explora la riqueza de los vinos españoles en nuestra noche de maridaje...</p>
+            </div>
+            <!-- Tarjeta de evento: Cata de Quesos -->
+            <div class="card">
+                <h1 class="card-title">Cata de Quesos</h1>
+                <h2 class="card-subtitle">Restaurante Mondariz, Valencia</h2>
+                <p class="card-description">Descubre la variedad y la riqueza de los quesos españoles en nuestra cata especial...</p>
+            </div>
+            <!-- Tarjeta de evento: Cocina en Vivo -->
+            <div class="card">
+                <h1 class="card-title">Cocina en Vivo</h1>
+                <h2 class="card-subtitle">Restaurante Mondariz, Bilbao</h2>
+                <p class="card-description">Participa en nuestra experiencia de cocina en vivo, donde nuestros chefs...</p>
+            </div>
+            <!-- Tarjeta de evento: Fiesta de Fin de Año -->
+            <div class="card">
+                <h1 class="card-title">Fiesta de Fin de Año</h1>
+                <h2 class="card-subtitle">Restaurante Mondariz, Granada</h2>
+                <p class="card-description">Celebra la llegada del nuevo año con nosotros, disfrutando de una cena especial...</p>
+            </div>
+        </div>        
+    </div>
+    <!-- Pie de página con enlaces -->
+    <footer>
+        <div class="footer">
+            <!-- Enlace a la política de privacidad -->
+            <a href="https://www.cofciudadreal.com/copyright/Politica-Privacidad.pdf">
+                <img src="images/privacy.png" alt="Icono de Privacidad">
+                Política De Privacidad
+            </a>
+            <!-- Enlace a redes sociales -->
+            <a href="https://www.uc3m.es/Home" title="Íconos de Redes Sociales">
+                <img src="images/social.png" alt="Icono de Redes Sociales">
+                Redes Sociales
+            </a>
+            <!-- Enlace para contacto por correo -->
+            <a href="mailto:restaurante-mandariz@gmail.com">
+                <img src="images/correo.png" alt="Icono de Contacto por Correo">
+                Contacto
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

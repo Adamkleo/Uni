@@ -1,0 +1,48 @@
+<html lang="es">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Mis tareas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <div id="card">
+        <div>
+            <div id="card-title">
+                <h2>My Tasks</h2>
+                <div class="underline-title"></div>
+            </div>
+            <div id="add-task-container">
+                <div class="input-container">
+                    <div class="col">
+                        <input id="task-name" class="effect" type="text" placeholder="Input Task">
+                        <span class="focus-border">
+                            <i></i>
+                        </span>
+                    </div>
+                    <button id="fab-add">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                          <line x1="12" y1="5" x2="12" y2="19"></line>
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                      </button>
+                </div>
+            </div>
+            <div class="taskContainer">
+                <ul id="tasks"></ul>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

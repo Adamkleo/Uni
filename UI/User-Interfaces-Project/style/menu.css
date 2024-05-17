@@ -1,0 +1,332 @@
+h1, h2, p {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    overflow-y: hidden; /* 1. Quitar scroll vertical */
+}
+
+/* Container principal */
+.breadcrumb-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f9f9f9;
+    padding: 10px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
+  
+  /* Lista sin orden */
+  .breadcrumb-list {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Items de la lista */
+  .breadcrumb-item {
+    margin: 0 10px;
+    position: relative;
+  }
+  
+  /* Items de la lista: Antes del pseudo-elemento */
+  .breadcrumb-item:before {
+    content: '→';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ccc;
+  }
+  
+  /*El primer item de la lista no debería tener una flecha antes de él*/
+  .breadcrumb-item:first-child:before {
+    content: "";
+  }
+  
+  /* Enlaces de anclaje */
+  .breadcrumb-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Estado hover */
+  .breadcrumb-link:hover {
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  /* Link de deshabilitado */
+.breadcrumb-link.disabled {
+    color: #ccc;
+    pointer-events: none;
+  }
+
+  .content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+.breadcrumb-item.completed .breadcrumb-link {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.content-section {
+    margin-top: 60px; /* Altura de container breadcrumb y padding */
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+.content-section {
+    padding: 20px;
+}
+
+#summary-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+
+
+
+
+
+/* Grid para Products */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Estilo producto individual */
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: white;
+    width: auto;  /* Width fijado */
+    height: auto; /* Altura fijada */
+}
+
+/* Estilos de texto */
+.menu-item span {
+    text-align: center;
+    font-size: 1.1em;
+}
+
+/* Botones */
+.button-container {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.green-button,
+.red-button {
+    width: 25px; /* Establecer grosor y altura para crear botones circulares*/
+    height: 25px;
+    padding: 0; /* Eliminar padding */
+    border: none;
+    border-radius: 50%; /* Lo hace circular */
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.green-button {
+    background-color: green;
+    color: white;
+}
+
+.red-button {
+    background-color: red;
+    color: white;
+}
+
+.green-button:hover {
+    background-color: darkgreen;
+}
+
+.red-button:hover {
+    background-color: darkred;
+}
+
+.next-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.next-button:hover {
+    background-color: #2980b9;
+}
+
+.next-button:active {
+    background-color: #1f679e;
+}
+/* Estilo de counter */
+.counter {
+    font-weight: bold;
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .menu-item {
+        max-width: 100%; /* Ajustar la anchura máxima */
+    }
+}
+
+@media (min-width: 1360px) {
+    .menu-item {
+        max-width: 306px; /* Ajustar la anchura máxima */
+    }
+}
+
+
+#orderReviewContainer {
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    margin: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+}
+
+.item:hover {
+    border-color: #666;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+}
+
+.item-name, .item-quantity, .item-price {
+    flex: 1;
+    padding: 0 8px;
+}
+
+.item-price {
+    text-align: right;
+}
+
+.total {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: right;
+    padding: 16px;
+    background-color: #eee;
+    border-top: 1px solid #ccc;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* 2. Centrar el div principal */
+    justify-content: center;
+    height: 100vh;
+}
+
+#status-message {
+    font-size: 32px;  /* 4. Reducir el tamaño del texto del pedido */
+    padding-bottom: 20px;
+}
+
+#circle {
+    width: 200px;  /* 5. Incrementar el tamaño del círculo */
+    height: 200px;
+    transform: rotate(-90deg);
+}
+
+#timer-wrapper {
+    position: relative;
+    width: 200px;  /* 5. Incrementar el tamaño del timer */
+    height: 200px;
+}
+
+#timer {
+    font-size: 48px;  /* 5. Incrementar el tamaño del timer */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#user-id-input {
+    width: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+#verify-button {
+    padding: 5px 10px;
+    background-color: #3498db;
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#verify-button:hover {
+    background-color: #2980b9;
+}
+
+#verify-button:active {
+    background-color: #1f679e;
+}
+
+.userID-container {
+    padding-top: 20px;
+}

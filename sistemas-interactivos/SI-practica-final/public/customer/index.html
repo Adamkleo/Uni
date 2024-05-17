@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Shopping Interface</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <img src="../assets/logo.svg.png" alt="Logo" class="logo">
+        <span id="total-price" class="total-price">Total: $0.00</span>
+        <img src="../assets/cart.png" alt="Cart" class="cart-icon" onclick="toggleView('checkout')">
+    </div>
+
+    <div id="shop" class="page active">
+        <div id="cart-items" class="product-grid"></div>
+    </div>
+
+    
+    <div id="checkout" class="page" style="display:none;">
+        <h1>Checkout</h1>
+        <div id="checkout-items" class="checkout-grid"></div>
+        <button class="btn purchase-btn" onclick="finalizePurchase()">Purchase</button>
+        <button class="btn return-btn" onclick="toggleView('shop')">Return to Shop</button>
+    </div>
+
+    
+    <div id="qr_scanner" class="camera-viewer" style="display:none;">
+        <video id="preview" width="100%"></video>
+        <button id="switch_camera" class="camera-switch-button">
+            <img src="../assets/switch-camera.png" alt="Switch Camera" />
+        </button>
+    </div>
+
+    <div id="favorite" class="page" style="display:none;">
+        <h1>Favorites</h1>
+        <div id="favorite-items" class="product-grid"></div>
+    </div>
+
+
+    <div class="bottom-nav">
+        <div class="nav-button" onclick="toggleView('favorite')">
+            <img src="../assets/star.png" alt="Favorites" class="nav-icon">
+        </div>
+        <div class="nav-button voice" onclick="toggleSpeechRecognition()">
+            <img src="../assets/mic.png" alt="Voice Control" class="nav-icon">
+        </div>
+        <div class="nav-button" onclick="toggleCameraView()">
+            <img src="../assets/qr_logo.svg.png" alt="More" class="nav-icon">
+        </div>
+    </div>
+
+
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+    
+    <script src="voice-commands.js"></script>
+    <script src="script.js"></script>
+    <script src="motion.js"></script>
+    <script src="checkout.js"></script>
+
+</body>
+
+</html>

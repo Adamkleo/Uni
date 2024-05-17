@@ -1,0 +1,15 @@
+2023-11-29 13:25:44,897 - INFO - Encryption key generada. Algoritmo: Fernet, Longitud de clave: 256 bits
+2023-11-29 13:25:45,468 - INFO - Generada la clave de firma digital. Algoritmo: RSA, Tamaño de clave: 2048 bits
+2023-11-29 13:26:01,405 - INFO - Mensaje encriptado: b'gAAAAABlZy3Z-nG3BznDBSgH3TGhyX9l26wwScaXoSjLQ68wwLZDgzqKkRO0AWATlmHw7S4_xWMr1TvJXg9PPTeVULDm1Ip_uqBzpXerZuG1F1YiQoep9raeViPbTi4vrjTT2Cwn5N94'
+2023-11-29 13:26:01,405 - INFO - Etiqueta HMAC se ha añadido al mensaje encriptado.
+2023-11-29 13:26:01,406 - INFO - Mensaje encriptado: b'gAAAAABlZy3ZCMOrGEnhJnfP1aA46lnG3c0I-tDRpZxhCZVaqyZwGOGORmPxqsvyA8T7cqQgJUhLLs6mekhlo6OST_K_qRm08w=='
+2023-11-29 13:26:01,406 - INFO - Mensaje encriptado: b'gAAAAABlZy3ZAhwnT600k5cituaUTSz8FTCux82dKbgx8kb-JnL-bG68loYQchj7aJeHBdzuaszD2UTOC6T6M1dNi-CHlRROLA=='
+2023-11-29 13:26:01,406 - INFO - Mensaje encriptado: b'gAAAAABlZy3ZezD1P9i7in_XWqKLcuaOQ1xg9EjNamp6oalqEtzSXibjgkCV4FhYZKcCldqbqrmgzK877ig7yEiG7XE4qIv1NQ=='
+2023-11-29 13:26:01,736 - INFO - Pedido se ha mandado al cine.
+2023-11-29 13:26:01,736 - INFO - HMAC verificada. No se ha modificado el pedido.
+2023-11-29 13:26:01,736 - INFO - Order decrypting.
+2023-11-29 13:26:01,737 - INFO - Mensaje desencriptado: jo's purchase: Pulp Fiction for 18 euros.
+2023-11-29 13:26:01,737 - INFO - Encriptación y decriptación exitosas.
+2023-11-29 13:26:07,250 - INFO - Mensaje desencriptado: Pulp Fiction
+2023-11-29 13:26:07,560 - INFO - Se ha procesado la reseña
+2023-11-29 13:26:07,583 - INFO - Verificación de firma digital exitosa

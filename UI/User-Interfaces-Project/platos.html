@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Enlace a la hoja de estilo -->
+    <link rel="stylesheet" href="style/main.css">
+    <script src="script/image_gallery.js"></script>
+    <title>Platos Más Pedidos</title>
+</head>
+<body>
+
+    <!-- Contenedor principal -->
+    <div class="flex-container">
+        <!-- Columna grande para los platos -->
+        <div class="large-column">
+            <!-- Tarjeta del Plato de Aperitivos -->
+            <div class="card">
+                <!--- Titulo, subtitulo, y descripcion de la tarjeta (cada tarjeta tiene la misma estructura)-->
+                <h1 class="card-title">Plato de Aperitivos</h1>
+                <h2 class="card-subtitle">Delicias Variadas para Comenzar</h2>
+                <p class="card-description">Una selección de nuestras mejores tapas para abrir el apetito, incluyendo aceitunas aliñadas, queso manchego, jamón ibérico y albóndigas en salsa. Cada bocado es una experiencia única de sabor y tradición.</p>
+            </div>
+            <!-- Tarjeta de la Paella -->
+            <div class="card">
+                <h1 class="card-title">Paella</h1>
+                <h2 class="card-subtitle">Sabor y Color del Mediterráneo</h2>
+                <p class="card-description">Nuestra paella es una explosión de sabor y color, con arroz jugoso, azafrán aromático, y una variedad de mariscos frescos y carnes selectas. Un plato icónico que representa la riqueza gastronómica de España.</p>
+            </div>
+            <!-- Tarjeta de las Gambas al Ajillo -->
+            <div class="card">
+                <h1 class="card-title">Gambas al Ajillo</h1>
+                <h2 class="card-subtitle">Del Mar a la Mesa con Aromas del Sur</h2>
+                <p class="card-description">Gambas frescas salteadas en aceite de oliva con ajo picado y guindilla, un plato sencillo pero lleno de sabor, que captura la esencia de la cocina mediterránea y la frescura de los productos del mar.</p>
+            </div>
+            <!-- Tarjeta de la Tortilla Española -->
+            <div class="card">
+                <h1 class="card-title">Tortilla Española</h1>
+                <h2 class="card-subtitle">Tradición y Sencillez en Cada Bocado</h2>
+                <p class="card-description">La tortilla española es una obra maestra de la simplicidad, con patatas, huevos y cebollas como protagonistas. Dorada por fuera y jugosa por dentro, es un homenaje a la cocina casera y auténtica.</p>
+            </div>
+        </div>
+        
+        <!-- Columna pequeña para las imágenes -->
+        <div class="small-column">
+            <div class="left-flex-container">
+                <!-- Enlace al inicio con el logo del restaurante -->
+                <a href="principal.html"><img src="./images/logo-B.png" alt="Logo del Restaurante"></a>
+                <!-- Imagen del Plato de Aperitivos -->
+            <div class ="carrusel">
+                <div class="diapositivas imagen1">
+                <img class="gallary-image" src="images/plato.jpg" alt="Imagen de Plato de Aperitivos - Delicias Variadas para Comenzar">
+                </div>
+                <!-- Imagen de la Paella -->
+                <div class="diapositivas" >
+                <img class="gallary-image" src="images/paella.jpg" alt="Imagen de Paella - Sabor y Color del Mediterráneo">
+                <!-- Imagen de las Gambas al Ajillo -->
+                </div>
+                <div class="diapositivas" >
+                <img class="gallary-image" src="images/gambas.jpg" alt="Imagen de Gambas al Ajillo - Del Mar a la Mesa con Aromas del Sur">
+                </div>
+                <!-- Imagen de la Tortilla Española -->
+                <div class="diapositivas" >
+                <img class="gallary-image" src="images/tortilla.jpg" alt="Imagen de Tortilla Española - Tradición y Sencillez en Cada Bocado">
+                </div>
+                <!--Flechas izquierda y derecha para navegar por la galería de imágenes-->
+                <a class="img_anterior" onclick="cambiar_imagen(-1)">&#10094;</a>
+                <a class="img_siguiente" onclick="cambiar_imagen(1)">&#10095;</a>
+
+            </div>
+            <!--Círculos para saltar a una imagen específica de la galería de imágenes-->
+            <div circulos>
+                <span class="circulo" onclick="imagen_actual(1)"></span>
+                <span class="circulo" onclick="imagen_actual(2)"></span>
+                <span class="circulo" onclick="imagen_actual(3)"></span>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Pie de página con enlaces e información de contacto -->
+    <footer>
+        <div class="footer">
+            <!-- Enlace a la política de privacidad -->
+            <a href="https://www.cofciudadreal.com/copyright/Politica-Privacidad.pdf">
+                <img src="images/privacy.png" alt="Icono de Privacidad">
+                Política De Privacidad
+            </a>
+            <!-- Enlace a redes sociales -->
+            <a href="https://www.uc3m.es/Home" title="Íconos de Redes Sociales">
+                <img src="images/social.png" alt="Icono de Redes Sociales">
+                Redes Sociales
+            </a>
+            <!-- Enlace para contacto por correo -->
+            <a href="mailto:restaurante-mandariz@gmail.com">
+                <img src="images/correo.png" alt="Icono de Contacto por Correo">
+                Contacto
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

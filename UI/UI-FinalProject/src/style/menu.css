@@ -1,0 +1,27 @@
+.menu-container {
+    margin-top: 60px;
+    text-align: center; /* Center aligns the text */
+}
+
+.menu-item {
+    margin-bottom: 30px; /* Gap between each menu item */
+    /* Optional: If you want to center-align the entire block, not just text */
+    display: inline-block;
+    width: 100%;
+}
+
+.menu-item-name,
+.menu-item-description,
+.menu-item-price {
+    margin-bottom: 5px; /* Small space between name, description, and price */
+    display: block; /* Makes each part take up the full width */
+}
+.menu-item-name {
+    font-size: 20px;
+}
+.menu-item-description {
+    font-size: 18px;
+}
+.menu-item-price {
+    font-size: 16px;
+}

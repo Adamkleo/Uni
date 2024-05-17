@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- Se corrige el atributo lang a 'es' para indicar que el contenido está en español -->
+<head>
+    <!-- Especificación del conjunto de caracteres y metainformación relevante -->
+    <meta charset="UTF-8">
+    <!-- Asegurando una representación adecuada en distintos dispositivos y habilitando el zoom táctil -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Enlace a la hoja de estilo -->
+    <link rel="stylesheet" href="style/main.css">
+    <script src="script/image_gallery.js"></script>
+    <!-- Título representativo de la página -->
+    <title>Historia</title>
+</head>
+<body>
+    <!-- Contenedor principal con diseño flexible para adaptarse a diferentes tamaños de pantalla -->
+    <div class="flex-container">
+        <!-- Columna de mayor tamaño dedicada a la presentación detallada de la historia -->
+        <div class="large-column">
+            <!-- Cada tarjeta representa un período diferente en la historia del restaurante -->
+            <!-- Primer Período -->
+            <div class="card">
+            <!--- Titulo, subtitulo, y descripcion de la tarjeta (cada tarjeta tiene la misma estructura)-->
+                <h1 class="card-title">1938-1956</h1>
+                <h2 class="card-subtitle">Los Años de la Postguerra</h2>
+                <p class="card-description">En estos años difíciles, Restaurante Mondariz se convirtió en un refugio de esperanza y sabor. Superamos la escasez con creatividad culinaria y fuimos testigos del renacer de la alegría y la unidad en cada plato servido. La paella se volvió símbolo de resistencia y nuestras puertas, un umbral a la reconstrucción de la vida madrileña.</p>
+            </div>
+            <div class="card">
+                <h1 class="card-title">1956-1978</h1>
+                <h2 class="card-subtitle">Tiempo de Cambios y Movida</h2>
+                <p class="card-description">Esta época vio a Restaurante Mondariz transformarse con la corriente cultural del país. Sevilla vibraba al ritmo del flamenco y nosotros, al calor de la movida, reinventamos nuestras recetas. Las tapas ganaron fama, la música llenaba cada rincón y cada noche se tejía una historia nueva en el tapeo y el baile.</p>
+            </div>
+            <div class="card">
+                <h1 class="card-title">1978-1997</h1>
+                <h2 class="card-subtitle">Era de Prosperidad y Innovación</h2>
+                <p class="card-description">Barcelona acogió a Restaurante Mondariz en un periodo de renovación y progreso. La exploración y experimentación en la cocina se volvieron nuestro lema. Descubrimos nuevas combinaciones en maridajes de vinos y platos, celebrando la diversidad y riqueza del patrimonio culinario español.</p>
+            </div>
+            <div class="card">
+                <h1 class="card-title">1997-2023</h1>
+                <h2 class="card-subtitle">Siglo XXI: Tradición y Modernidad</h2>
+                <p class="card-description">En Valencia, Restaurante Mondariz abrazó el nuevo milenio con una fusión de lo tradicional y lo moderno. Los quesos españoles se redescubrieron con un toque contemporáneo, y cada evento se convirtió en una experiencia única. Nos hemos consolidado como un emblema de la gastronomía española, respetando nuestras raíces y mirando hacia el futuro.</p>
+            </div>
+        </div>
+        <!-- Columna de menor tamaño destinada a mostrar imágenes representativas de cada período -->
+        <div class="small-column">
+            <div class="left-flex-container">
+                <!-- Imagen del logo que enlaza a la página principal -->
+                <a href="principal.html"><img src="./images/logo-B.png" alt="Logo del Restaurante"></a>
+                <div class ="carrusel">
+                    <div class="diapositivas imagen1">
+                    <img class="gallary-image historia"  src="images/historia1.jpg" alt="Evento histórico 1: ...">
+                    </div>
+                    <!-- Imagen de la Paella -->
+                    <div class="diapositivas" >
+                    <img class="gallary-image historia"  src="images/historia2.jpg" alt="Evento histórico 2: ...">
+                    <!-- Imagen de las Gambas al Ajillo -->
+                    </div>
+                    <div class="diapositivas" >
+                        <img class="gallary-image historia" src="images/historia3.jpg" alt="Evento histórico 3: ...">
+                    </div>
+                    <!-- Imagen de la Tortilla Española -->
+                    <div class="diapositivas" >
+                        <img class="gallary-image historia" src="images/historia4.jpg" alt="Evento histórico 4: ...">
+                    </div>
+                    <!--Flechas izquierda y derecha para navegar por la galería de imágenes-->
+                    <a class="img_anterior" onclick="cambiar_imagen(-1)">&#10094;</a>
+                    <a class="img_siguiente" onclick="cambiar_imagen(1)">&#10095;</a>
+    
+                </div>
+                <!--Círculos para saltar a una imagen específica de la galería de imágenes-->
+                <div circulos>
+                    <span class="circulo" onclick="imagen_actual(1)"></span>
+                    <span class="circulo" onclick="imagen_actual(2)"></span>
+                    <span class="circulo" onclick="imagen_actual(3)"></span>
+                </div>
+                <!-- Galería de imágenes representando eventos históricos relevantes -->
+                
+            </div>
+        </div>
+    </div>
+    <!-- Sección de pie de página con enlaces útiles e información de contacto -->
+    <footer>
+        <div class="footer">
+            <!-- Enlace a la política de privacidad -->
+            <a href="https://www.cofciudadreal.com/copyright/Politica-Privacidad.pdf">
+                <img src="images/privacy.png" alt="Icono de Privacidad">
+                Política De Privacidad
+            </a>
+            <!-- Enlace a redes sociales -->
+            <a href="https://www.uc3m.es/Home" title="Íconos de Redes Sociales">
+                <img src="images/social.png" alt="Icono de Redes Sociales">
+                Redes Sociales
+            </a>
+            <!-- Enlace para contacto por correo -->
+            <a href="mailto:restaurante-mandariz@gmail.com">
+                <img src="images/correo.png" alt="Icono de Contacto por Correo">
+                Contacto
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

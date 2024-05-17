@@ -1,0 +1,355 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Estilos base para body y html, como color de fondo, comportamiento de scroll, y fuente */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background: rgb(234, 232, 221);
+    scroll-behavior: smooth;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+
+}
+
+/* PAGINA PRINCIPAL */
+
+/* Definir el diseño en grid para el contenedor principal */
+.grid-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.grid-item {
+    width: 100%;
+    min-height: 100vh;
+    /* To occupy full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s, background-color 0.5s;
+    /* Initial transition setting */
+}
+
+
+/* Estilos para imágenes dentro de los elementos del grid, incluyendo transiciones y sombras */
+.grid-item img {
+    height: 400px;
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+    box-shadow: 10px 10px 10px gray;
+    filter: blur(4px);
+}
+
+/* Estilos para image hover */
+.img-wrapper:hover img {
+    transform: scale(1.1);
+    filter: none;
+}
+
+/* Estilos para el texto centrado sobre las imágenes */
+.img-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.centered-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.75s ease-in-out;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    flex-direction: column;
+    transition: color 0.5s;
+}
+
+.img-wrapper:hover .centered-text {
+    opacity: 0;
+}
+
+
+
+/* Responsive design: Cambios en el diseño de la grid para diferentes tamaños de pantalla */
+@media (min-width: 769px) and (max-width: 1300px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Para pantallas hasta 768px */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+/* ESTILOS DE TODAS LAS PÁGINAS */
+/*Las siguientes clases CSS son usadas en todas las páginas, pero algunas son únicas para
+un solo elemento*/
+/*Estilo para el vídeo*/
+.food-video {
+    max-width: 100vw;
+    max-height: 100vh;
+    margin-top: 10px;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+/*Hacer el vídeo modo paisaje para el móvil*/
+
+@media (max-width: 600px) {
+    .food-video {
+        height: 50vw;
+        object-position: center;
+    }
+}
+
+/* Estilo de secciones */
+.section-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Estilo para contenedor de secciones */
+.section-container h1 {
+    text-align: center;
+    font-size: 2em;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+/* Grid para las cartas */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/*  Estilo carta de localización */
+
+.location {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.location h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.cuisine-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.cuisine-item {
+    flex: 1 1 calc(50% - 20px);
+    text-align: center;
+}
+
+.cuisine-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .cuisine-item {
+        flex: 1 1 100%;
+    }
+}
+
+/*Contenedor flex para cualquier página con dos columnas, una pequeña y una grande*/
+
+.flex-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+    margin-bottom: 50px;
+}
+
+.small-column {
+    flex: 1;
+}
+
+.large-column {
+    flex: 1.5;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+.left-flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/*Estilo para la galería de imágenes*/
+
+.gallary-image {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+
+/*Estilo para una carta general que contiene título,subtítulo y descripción*/
+.card {
+    width: calc(50% - 20px);
+    box-sizing: border-box;
+    background-color: white;
+    padding: 20px;
+    color: #333;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all .5s ease-in-out;
+    text-decoration: none;
+    align-items: flex-start;
+
+}
+
+.location a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.location a:hover {
+    text-decoration: underline;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #2C3E50;
+}
+
+.card-subtitle {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    color: #7F8C8D;
+}
+
+.card-description {
+    font-size: 16px;
+    line-height: 2.25;
+    color: #606060;
+}
+
+#empleos {
+    padding-bottom: 100px;
+}
+
+
+/* Para vista de tablet */
+@media (min-width: 601px) and (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+}
+
+/* Para vista móvil */
+@media (max-width: 600px) {
+    .flex-container {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .card-title {
+        font-size: 20px;
+    }
+
+    .card-subtitle {
+        font-size: 16px;
+    }
+
+    .card-description {
+        font-size: 14px;
+    }
+}
+
+
+/* PIE DE PÁGINA */
+
+/*  Estilo del footer */
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(43, 43, 37);
+    color: #F4F4F4;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+    font-family: 'Arial', sans-serif;
+    z-index: 1000;
+}
+
+.footer>a {
+    color: #F4F4F4;
+    text-decoration: none;
+    padding: 0 20px;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer a img {
+    height: 24px;
+    width: 24px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.footer>a:hover {
+    color: #DAD7CD;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+    }
+
+    .footer>a {
+        padding: 5px 0;
+    }
+}

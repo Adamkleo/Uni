@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas</title>
+    <link rel="stylesheet" href="../style/main.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="javascript/reservas.js" defer></script>
+</head>
+<body>
+    <div class="custom-navbar">
+        <a class="opcion_navegacion" href="../index.html">WaBi</a>
+        <a class="opcion_navegacion" href="menu.html">Menu</a>
+        <a class="opcion_navegacion" href="reservas.html">Reservas</a>
+        <a class="opcion_navegacion" href="contacto.html">Contacto</a>
+        <a class="opcion_navegacion" href="pide.html">Pide Ahora</a>
+    </div>
+    <div class="custom-container">
+        <img class="custom-top-image" alt="Fondo principal" src="../assets/principal/Rectangle.png">
+        <img class="custom-overlay-image" alt="Fondo oscuro superpuesto" src="../assets/fondo-home.png">
+        <div class="custom-centered-text">RESERVAS</div>
+    </div>
+
+    <section class="reserva-section">
+        <h2 class="section-title">HAZ TU RESERVA</h2>
+        <p class="section-description">Reserva una mesa de una manera fácil y rápida. Elige el día, la hora, el número de personas y tu nombre.</p>
+        
+        <form id="reservationForm" class="reservation-form">
+            <div class="form-group">
+                <label for="reservationName">Nombre:</label>
+                <input type="text" id="reservationName" name="reservationName" required>
+            </div>
+            <div class="form-group">
+                <label for="reservationDate">Fecha:</label>
+                <input type="date" id="reservationDate" name="reservationDate" required>
+            </div>
+            <div class="form-group">
+                <label for="reservationTime">Hora:</label>
+                <input type="time" id="reservationTime" name="reservationTime" required>
+            </div>
+            <div class="form-group">
+                <label for="numberOfPeople">Número de Personas:</label>
+                <input type="number" id="numberOfPeople" name="numberOfPeople" min="1" required>
+            </div>
+            <button type="submit" class="r-button">Reservar</button>
+        </form>
+    </section>
+    <footer class="site-footer">
+      <div class="footer-logo">
+          <a href="/">
+              <img src="../assets/logo-SMALL.png" alt="Website Logo">
+          </a>
+      </div>
+      <div class="footer-logo">
+          <img src="../assets/instagram.png" alt="Instagram Logo">
+      </div>
+  </footer>
+</body>
+
+
+
+</html>

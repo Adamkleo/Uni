@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "stdlib.h": "c",
+        "operations.h": "c",
+        "util.h": "c",
+        "string.h": "c",
+        "storage.h": "c",
+        "__mutex_base": "c",
+        "mutex": "c",
+        "unistd.h": "c",
+        "rpc_message.h": "c"
+    }
+}

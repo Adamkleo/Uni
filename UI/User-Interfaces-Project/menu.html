@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Información de metadatos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/menu.css">
+    <!--scripts de JavaScript -->
+    <script defer src="/script/orderProcess.js"></script>
+    <script defer src="/script/menuItems.js"></script>
+    <script defer src="/script/orderReview.js"></script>
+    <script defer src="/script/orderStatus.js"></script>
+    <!-- Título de la página -->
+    <title>Menú / Pedir</title>
+</head>
+<body>
+    <!--Navegación Breadcrumb -->
+    <div class="breadcrumb-container">
+        <ul id="breadcrumb-list" class="breadcrumb-list">
+            <li id="product-item" class="breadcrumb-item"><a href="#" class="breadcrumb-link active">Productos</a></li>
+            <li id="review-item" class="breadcrumb-item"><a href="#" class="breadcrumb-link">Reseña</a></li>
+            <li id="status-item" class="breadcrumb-item"><a href="#" class="breadcrumb-link">Estado</a></li>
+        </ul>
+    </div>
+
+    <!-- Sección de productos -->
+    <div id="products-section" class="content-section active">
+        <div id="summary-section">
+            <button id="continue-button" class="next-button">Continuar</button>
+            <span id="total-dishes">Total Platos: 0</span>
+        </div>
+        <div id="products" class="product-grid">
+            <!-- Los elementos del menú se añadirán aquí -->
+        </div>
+    </div>
+
+    <!-- Sección de revisión -->
+    <div id="review-section" class="content-section">
+        <div id="summary-section">
+            <button id="confirm-button" class="next-button">Confirmar</button>
+            <span id="total-price">Total Precio: 0€</span>
+        </div>
+        <div id="orderReviewContainer">
+            <!-- La revisión aparecerá aquí -->
+        </div>
+        <div class="userID-container">
+            <input type="text" id="user-id-input" placeholder="Enter User ID">
+            <button id="verify-button">Verificar</button>
+        </div>
+    </div>
+
+    <!-- Sección de estado -->
+    <div id="status-section" class="content-section">
+        <div class="center">
+            <h1 id="status-message">Pedido llegará en</h1>
+            <div id="timer-wrapper">
+                <svg id="circle" viewBox="0 0 100 100">
+                    <circle id="progress" r="48" cx="50" cy="50" stroke="black" stroke-width="2" fill="none"></circle>
+                </svg>
+                <div id="timer"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

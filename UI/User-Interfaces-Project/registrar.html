@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Información de metadatos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Título -->
+    <title>Registrar</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/register.css">
+    <!--script de JavaScript  -->
+    <script defer src="/script/form.js"></script>
+</head>
+<body>
+    <form>
+        <div>
+            <!-- input User ID -->
+            <label for="userID">ID Usuario</label>
+            <input id="userID" name="userID" type="text" required>
+        </div>
+        <div>
+            <!-- Input de nombre -->
+            <label for="name">Nombre</label>
+            <input id="name" name="name" type="text" required autocomplete="name">
+        </div>
+        <div>
+            <!-- Input de apellido -->
+            <label for="surname">Apellido</label>
+            <input id="surname" name="surname" type="text" required autocomplete="family-name">
+        </div>
+        <div>
+            <!-- Input de nombre -->
+            <label for="telephone">Teléfono</label>
+            <input id="telephone" name="telephone" type="tel" required>
+        </div>
+        <div>
+            <!-- Input de email -->
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required autocomplete="email">
+        </div>
+        <div>
+            <!-- Input de contraseña -->
+            <label for="password">Contraseña</label>
+            <input id="password" name="password" type="password" required>
+        </div>
+        <div class="buttons">
+            <!-- Botón submit -->
+            <button type="submit">Enviar</button>
+            <!-- Botón limpiar -->
+            <button type="reset">Limpiar</button>
+            <!-- Botón cancelar -->
+            <button id="cancel-button" type="button">Cancelar</button>
+        </div>
+        <!-- Mensaje de entrega de formulario -->
+        <span id="form-submission"></span>
+    </form>
+</body>
+</html>

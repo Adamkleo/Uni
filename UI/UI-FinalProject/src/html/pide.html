@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../style/main.css" />
+  <script src="../javascript/pide/stepList.js" defer></script>
+  <script src="../javascript/pide/searchBar.js"></script>
+  <script src="../javascript/pide/foodFilters.js" defer></script>
+  <script src="../javascript/pide/foodCounters.js" defer></script>
+  <script src="../javascript/pide/animacion.js" defer></script>
+
+  <title>Pedir WaBi</title>
+</head>
+
+<body>
+  <div class="custom-navbar">
+    <a class="opcion_navegacion" href="../index.html">WaBi</a>
+    <a class="opcion_navegacion" href="./menu.html">Menu</a>
+    <a class="opcion_navegacion" href="./reservas.html">Reservas</a>
+    <a class="opcion_navegacion" href="./contacto.html">Contacto</a>
+    <a class="opcion_navegacion" href="./pide.html">Pide Ahora</a>
+  </div>
+  <div class="custom-container">
+    <img class="custom-top-image" alt="Fondo principal" src="../assets/principal/Rectangle.png" />
+    <img class="custom-overlay-image" alt="Fondo oscuro superpuesto" src="../assets/fondo-home.png" />
+    <div class="custom-centered-text">PIDE AHORA</div>
+  </div>
+
+  <div class="steplist-container">
+    <ul class="steplist">
+      <li id="step-list-seleccion" class="active">Selección</li>
+      <li id="step-list-revision">Revisión</li>
+      <li id="step-list-estado">Estado del pedido</li>
+    </ul>
+  </div>
+
+  <div id="seleccion">
+    <div class="search-bar-and-mastercount-container">
+      <input type="text" id="food-search-bar" onkeyup="myFoodSearch()" placeholder="Busca platos..." />
+      <div class="master-counter-box">
+        <div id="master-counter-label">Total</div>
+        <span id="master-counter">0</span>
+      </div>
+    </div>
+
+    <div class="food-filter-container">
+      <h3>Alérgenos</h3>
+      <ul class="food-filter-list">
+        <li>
+          <input type="checkbox" onclick="filterAlimentos()" class="filter-checkbox" id="pescado-check" />
+          <label for="pescado-check">Pescados</label>
+        </li>
+        <li>
+          <input type="checkbox" onclick="filterAlimentos()" class="filter-checkbox" id="algas-check" />
+          <label for="algas-check">Algas</label>
+        </li>
+        <li>
+          <input type="checkbox" onclick="filterAlimentos()" class="filter-checkbox" id="aguacate-check" />
+          <label for="aguacate-check">Aguacate</label>
+        </li>
+        <li>
+          <input type="checkbox" onclick="filterAlimentos()" class="filter-checkbox" id="soja-check" />
+          <label for="soja-check">Soja</label>
+        </li>
+        <li>
+          <input type="checkbox" onclick="filterAlimentos()" class="filter-checkbox" id="gluten-check" />
+          <label for="gluten-check">Gluten</label>
+        </li>
+        <li>
+          <input type="checkbox" onclick="filterAlimentos()" class="filter-checkbox" id="sesamo-check" />
+          <label for="sesamo-check">Sesamo</label>
+        </li>
+        <li>
+          <input type="checkbox" onclick="filterAlimentos()" class="filter-checkbox" id="mariscos-check" />
+          <label for="mariscos-check">Mariscos</label>
+        </li>
+        <li>
+          <input type="checkbox" onclick="filterAlimentos()" class="filter-checkbox" id="lactosa-check" />
+          <label for="lactosa-check">Lactosa</label>
+        </li>
+      </ul>
+    </div>
+
+    <div class="food-list-container">
+      <ul id="food-list">
+        <li class="food-item pescado alga aguacate">
+          <div class="item-container">
+            <h4>Sushi Maki Clásico (8 piezas)</h4>
+            <p>Arroz, alga nori, salmón, aguacate, pepino</p>
+            <p>9.00€</p>
+            <div class="counter-box">
+              <button class="decrement" onclick="removeFood('sushi-maki')">
+                -
+              </button>
+              <span class="counter">0</span>
+              <button class="increment" onclick="addFood('sushi-maki')">
+                +
+              </button>
+            </div>
+          </div>
+        </li>
+        <li class="food-item gluten soja">
+          <div class="item-container">
+            <h4>Ramen de Miso con Tofu</h4>
+            <p>Caldo miso, fideos ramen, tofu, cebolla verde, algas</p>
+            <p>10.00€</p>
+            <div class="counter-box">
+              <button class="decrement" onclick="removeFood('ramen')">-</button>
+              <span class="counter">0</span>
+              <button class="increment" onclick="addFood('ramen')">+</button>
+            </div>
+          </div>
+        </li>
+        <li class="food-item gluten soja sesamo">
+          <div class="item-container">
+            <h4>Donburi de Pollo Teriyaki</h4>
+            <p>Arroz, pollo teriyaki, cebollín, semillas de sésamo</p>
+            <p>9.50€</p>
+            <div class="counter-box">
+              <button class="decrement" onclick="removeFood('donburi')">
+                -
+              </button>
+              <span class="counter">0</span>
+              <button class="increment" onclick="addFood('donburi')">+</button>
+            </div>
+          </div>
+        </li>
+        <li class="food-item gluten soja">
+          <div class="item-container">
+            <h4>Tempura de Verduras Mixtas</h4>
+            <p>Verduras variadas, harina tempura, salsa soja</p>
+            <p>7.50€</p>
+            <div class="counter-box">
+              <button class="decrement" onclick="removeFood('tempura')">
+                -
+              </button>
+              <span class="counter">0</span>
+              <button class="increment" onclick="addFood('tempura')">+</button>
+            </div>
+          </div>
+        </li>
+        <li class="food-item algas sesamo">
+          <div class="item-container">
+            <h4>Ensalada de Wakame</h4>
+            <p>Alga wakame, pepino, salsa de sésamo, vinagre de arroz</p>
+            <p>6.00€</p>
+            <div class="counter-box">
+              <button class="decrement" onclick="removeFood('ensalada')">
+                -
+              </button>
+              <span class="counter">0</span>
+              <button class="increment" onclick="addFood('ensalada')">+</button>
+            </div>
+          </div>
+        </li>
+        <li class="food-item gluten soja">
+          <div class="item-container">
+            <h4>Gyozas de Verduras (6 piezas)</h4>
+            <p>Masa de gyoza, verduras variadas, salsa soja</p>
+            <p>7.00€</p>
+            <div class="counter-box">
+              <button class="decrement" onclick="removeFood('gyozas')">
+                -
+              </button>
+              <span class="counter">0</span>
+              <button class="increment" onclick="addFood('gyozas')">+</button>
+            </div>
+          </div>
+        </li>
+        <li class="food-item gluten soja algas sesamo">
+          <div class="item-container">
+            <h4>Bento Box Vegetariano</h4>
+            <p>Arroz, tempura de verduras, ensalada de wakame, tofu</p>
+            <p>12.00€</p>
+            <div class="counter-box">
+              <button class="decrement" onclick="removeFood('bento')">-</button>
+              <span class="counter">0</span>
+              <button class="increment" onclick="addFood('bento')">+</button>
+            </div>
+          </div>
+        </li>
+        <li class="food-item mariscos gluten">
+          <div class="item-container">
+            <h4>Takoyaki (6 piezas)</h4>
+            <p>Masa de takoyaki, pulpo, cebolla verde, salsa takoyaki</p>
+            <p>8.00€</p>
+            <div class="counter-box">
+              <button class="decrement" onclick="removeFood('takoyaki')">
+                -
+              </button>
+              <span class="counter">0</span>
+              <button class="increment" onclick="addFood('takoyaki')">+</button>
+            </div>
+          </div>
+        </li>
+        <li class="food-item soja">
+          <div class="item-container">
+            <h4>Edamame con Sal Marina</h4>
+            <p>Edamame, sal marina</p>
+            <p>5.00€</p>
+            <div class="counter-box">
+              <button class="decrement" onclick="removeFood('edamame')">
+                -
+              </button>
+              <span class="counter">0</span>
+              <button class="increment" onclick="addFood('edamame')">+</button>
+            </div>
+          </div>
+        </li>
+        <li class="food-item lactosa gluten">
+          <div class="item-container">
+            <h4>Helado de Té Verde Matcha</h4>
+            <p>Té verde matcha, leche, azúcar</p>
+            <p>4.50€</p>
+            <div class="counter-box">
+              <button class="decrement" onclick="removeFood('helado')">
+                -
+              </button>
+              <span class="counter">0</span>
+              <button class="increment" onclick="addFood('helado')">+</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="seleccion-button-container">
+      <button id="nextButtonSeleccion" onclick="showNextMenu('seleccion')" disabled>SIGUIENTE</button>
+    </div>
+
+  </div>
+
+  <div id="revision" class="hidden">
+    <div class="resumen-container">
+      <ul id="revision-resumen">
+      </ul>
+    </div>
+
+    <div class="seleccion-button-container">
+      <button onclick="showPreviousMenu('revision')">ANTERIOR</button>
+      <button onclick="showNextMenu('revision')">SIGUIENTE</button>
+    </div>
+  </div>
+
+  <div id="estado" class="hidden">
+    <div class="delivery-line-container">
+      <div id="delivery-line"></div>
+      <div class="delivery-point" id="Preparando" data-stage="Preparando"></div>
+      <div class="delivery-point" id="Recogido" data-stage="Recogido"></div>
+      <div class="delivery-point" id="Entregado" data-stage="Entregado"></div>
+      <div id="moving-shape"></div>
+    </div>
+    <div class="timer"><span id="delivery-timer">00:00</span></div>
+  </div>
+  
+
+  <footer class="site-footer">
+    <div class="footer-logo">
+      <a href="/">
+        <img src="../assets/logo-SMALL.png" alt="Website Logo">
+      </a>
+    </div>
+    <div class="footer-logo">
+      <img src="../assets/instagram.png" alt="Instagram Logo">
+    </div>
+  </footer>
+</body>
+
+
+</html>
